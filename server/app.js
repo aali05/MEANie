@@ -39,7 +39,7 @@ console.log( 'listening on 8080' );
 
 
 app.post( '/testPost', function( req, res ){
-console.log( 'req.body.name: ' + req.body.name );
+console.log( 'req.body: ' , req.body);
 // retrieved the req.body
 // putting it into an object to be saved in the db
 var recordToAdd={
