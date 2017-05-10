@@ -2,6 +2,7 @@ var myApp = angular.module( 'myApp', [] );
 // set up controller removed '$http' string
 myApp.controller( 'WhereMyPeeps', function( $http ){
   var vm = this;
+  vm.records = [];
   vm.addRecord = function(){
     var objectToSend ={
       name: vm.nameIn,
@@ -12,8 +13,8 @@ myApp.controller( 'WhereMyPeeps', function( $http ){
     url: '/testPost',
     data: objectToSend
   }).then( function( response ){
+    console.log('back from server with ->', response);
     vm.getRecords();
-    console.log( response );
 }); // end http
 //empty inputs
 vm.nameIn ='';
@@ -27,7 +28,7 @@ vm.getRecords = function(){
     url: '/getRecords'
   }).then(function success( response ){
     console.log('response ->', response);
-    vm.allTheRecords = response.data;
+    vm.records = response.data;
     });
   };
 });
