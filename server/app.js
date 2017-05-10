@@ -41,7 +41,11 @@ app.get( '/getRecords', function( req, res ){
 
 
 app.post( '/testPost', function( req, res ){
+<<<<<<< HEAD
 console.log( 'req.body -> ' , req.body );
+=======
+console.log( 'req.body: ' , req.body);
+>>>>>>> DomDisplay
 // retrieved the req.body
 // putting it into an object to be saved in the db
 var recordToAdd = {

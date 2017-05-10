@@ -2,7 +2,11 @@ var myApp = angular.module( 'myApp', [] );
 // set up controller removed '$http' string
 myApp.controller( 'WhereMyPeeps', function( $http ){
   var vm = this;
+<<<<<<< HEAD
   vm.records = [];
+=======
+  vm.allTheRecords = [];
+>>>>>>> DomDisplay
   vm.addRecord = function(){
     var objectToSend ={
       name: vm.nameIn,
@@ -31,4 +35,5 @@ vm.getRecords = function(){
     vm.records = response.data;
     });
   };
+  vm.getRecords();
 });
